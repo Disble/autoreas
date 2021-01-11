@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autoreas</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/materialize-css/dist/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontello.css" />
+</head>
+
+<body>
+    <a id="icon-downloader" class="no-link icon-downloader tooltipped" data-position="left"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABCCAIAAAB/4ddLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABdSURBVGhD7c8BDQAwEMSg+Td908GnOODttHqyerJ6snqyerJ6snqyerJ6snqyerJ6snqyerJ6snqyerJ6snqyerJ6snqyerJ6snqyerJ6snqyerJ6snqyerLTve0DxeQGHFVepuwAAAAASUVORK5CYII="
+            alt="white background" id="img-icon-downloader"></a>
+    <div class="row no-margin">
+        <div class="col s3 no-margin no-padding">
+            <ul class="collapsible no-margin z-depth-0" id="menu">
+            </ul>
+        </div>
+        <div class="col s9 ">
+            <div class="row no-margin">
+                <div class="col s12">
+                    <h3 class="center-align ver-day-title" id="title-day"></h3>
+                </div>
+            </div>
+            <div class="row" id="anime-cards">
+            </div>
+        </div>
+    </div>
+    <script>
+        require('../../js/ver-init.js')
+    </script>
+</body>
+
+</html>

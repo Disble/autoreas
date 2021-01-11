@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Información</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/materialize-css/dist/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontello.css" />
+</head>
+
+<body>
+    <div class="row info">
+        <div class="row blue lighten-1 mb-30">
+            <div class="col s12">
+                <h4 class="left-align">
+                    <button
+                        class="btn btn-return waves-effect waves-light blue lighten-1 blue-grey-text lighten-5 z-depth-0 left tooltipped"
+                        data-position="bottom" data-tooltip="Regresar" id="return-history">
+                        <i class="material-icons icon-left-open"></i>
+                    </button>
+                    <span class="pl-20 blue-grey-text lighten-5 blue lighten-1">Información</span>
+                </h4>
+            </div>
+        </div>
+        <!-- <div class="divider mb-30"></div> -->
+        <div class="row">
+            <div class="col s4 flex flex-x-center">
+                <div class="circle responsive-img info-cover info-cover-shadow" id="info-cover">
+                </div>
+            </div>
+            <div class="col s7">
+                <h4 class="name-info" id="nombre"></h4>
+                <span class="info-subtitle" id="estado"></span>
+                <span class="info-subtitle"> • </span>
+                <span class="info-subtitle" id="tipo"></span>
+                <div class="row">
+                    <div class="col s3">
+                        <div class="mt-20">
+                            <a href="#"
+                                class="btn-eliminar-anime red-text red lighten-4 center no-link z-depth-2 hoverable">Eliminar
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s3 hide" id="repetir-container">
+                        <div class="mt-20">
+                            <a href="#"
+                                class="btn-repetir-anime red-text blue lighten-4 center no-link z-depth-2 hoverable">Repetir
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <div class="mt-20 hide" id="restaurar-container">
+                            <a href="#"
+                                class="btn-restaurar-anime red-text orange lighten-4 center no-link z-depth-2 hoverable">Restaurar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s12">
+                <h5 class="grey-text">Información por capítulo</h5>
+            </div>
+            <div class="row">
+                <div class="col s6 info-margin-cap">
+                    <i class="icon-hashtag left grey-text info-cap-hashtag"></i>
+                    <h4 class="info-cap-vistos" id="capvistos"></h4>
+                    <p class="info-cap-sub grey-text" id="totalcap"></p>
+                    <p class="info-cap-sub grey-text" id="duracion"></p>
+                </div>
+                <div class="col s6">
+                    <canvas id="capVistos" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s12">
+                <h5 class="grey-text">Datos generales</h5>
+            </div>
+            <div class="row">
+                <div class="col s12 mt-20">
+                    <p class="grey-text"><i class="icon-link left info-data-icon"></i>Página</p>
+                    <h6 class="bold" id="pagina"></h6>
+                </div>
+                <div class="col s12 info-cap-separate">
+                    <p class="grey-text"><i class="icon-folder-open left info-data-icon"></i>Carpeta</p>
+                    <h6 class="bold" id="carpeta"></h6>
+                </div>
+                <div class="col s12 info-cap-separate">
+                    <p class="grey-text"><i class="icon-fork left info-data-icon"></i>Origen</p>
+                    <h6 class="bold" id="origen"></h6>
+                </div>
+                <div class="col s12 info-cap-separate">
+                    <p class="grey-text"><i class="icon-home-1 left info-data-icon"></i>Estudios</p>
+                    <div id="estudios">
+                        <h6 class="bold">No hay estudios registrados, ¡es tu deber encontrarlos!</h6>
+                    </div>
+                </div>
+                <div class="col s12 mt-10">
+                    <p class="grey-text"><i class="icon-flag left info-data-icon"></i>Generos</p>
+                    <div id="chips-generos"></div>
+                </div>
+            </div>
+        </div>
+        <div class="divider mb-20"></div>
+        <div class="row">
+            <div class="col s12 mb-20">
+                <canvas id="lineatiempo" height="200"></canvas>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="collapsible z-depth-0">
+                        <li>
+                            <div class="collapsible-header">Detalles de la línea de tiempo</div>
+                            <div class="collapsible-body">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input readonly id="fechapublicacion" type="text">
+                                        <label for="fechapublicacion">Fecha de publicación</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input readonly id="fechaestreno" type="text">
+                                        <label for="fechaestreno">Fecha de estreno</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input readonly id="fechacreacion" type="text">
+                                        <label for="fechacreacion">Fecha de creación</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input readonly id="fechaultcap" type="text">
+                                        <label for="fechaultcap">Fecha de último capitulo visto</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input readonly id="fechaeliminacion" type="text">
+                                        <label for="fechaeliminacion">Fecha de eliminación</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="historial-repeticion" class="row hide">
+            <div class="divider mb-20"></div>
+            <div class="col 12">
+                <h5 class="grey-text">Historial de repetición</h5>
+            </div>
+            <div class="row">
+                <div class="col s12 mt-20">
+                    <ul class="collapsible z-depth-0" id="for-repeticion">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script>
+        require('../../js/info-init.js')
+    </script>
+</body>
+
+</html>

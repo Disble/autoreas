@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editar</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/materialize-css/dist/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontello.css" />
+</head>
+
+<body>
+    <div class="row edit-anime-list">
+        <div class="col s4 no-padding">
+            <ul class="collection with-header no-margin">
+                <li class="collection-header">
+                    <h5 class="blue-grey-text">Animes</h5>
+                </li>
+                <div id="edit-anime-list"></div>
+            </ul>
+        </div>
+
+        <div class="col s8">
+            <div class="col s12">
+                <h5>Editar</h5>
+            </div>
+            <form id="form-edit-anime">
+                <div class="input-field col s12">
+                    <input type="text" placeholder="Nombre" name="nombre" id="nombre" class="validate" required>
+                    <label for="nombre" data-error="Este campo no puede estar vacio">Nombre</label>
+                </div>
+                <div class="input-field col s12">
+                    <div class="select-wrapper">
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-trigger btn btn-block dropdown-dias z-depth-0 wrap-one-line'
+                            id="dropdown-dias-trigger" href='#' data-target='dropdown-dias' dropdown-dias="drop-anime">
+                            <span autoreas-droptext="dropdown-dias-text">Días</span>
+                            <span class="right">
+                                <svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10l5 5 5-5z"></path>
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown-dias' autoreas-dropdias="drop-anime" class='dropdown-content days'>
+                        </ul>
+                    </div>
+                    <label for="dropdown-dias-trigger" data-error="Este campo no puede estar vacio">Días</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="number" id="cap-vistos" name="cap-vistos" placeholder="Capítulos vistos" min="0"
+                        class="validate" required>
+                    <label for="cap-vistos" data-error="Este campo no puede estar vacio">Capítulos vistos</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="number" id="total-cap" name="total-cap" placeholder="Total capítulos" min="0"
+                        class="validate">
+                    <label for="total-cap" data-error="Este campo no puede estar vacio">Total capítulos</label>
+                </div>
+                <div class="input-field col s12">
+                    <select name="tipo" id="tipo" class="validate" required>
+                        <option value="" disabled selected>Tipo</option>
+                    </select>
+                    <label for="tipo" data-error="Seleccione un tipo.">Tipo</label>
+                </div>
+                <div class="input-field col s12">
+                    <select name="estado" id="estado" class="validate" required>
+                        <option value="" disabled selected>Estado</option>
+                    </select>
+                    <label for="estado" data-error="Seleccione un estado.">Estado</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" placeholder="Pagina" id="pagina" name="pagina" class="validate" required>
+                    <label for="pagina" data-error="Este campo no puede estar vacio">Pagina</label>
+                </div>
+                <div class="file-field input-field col s12">
+                    <div class="btn btn-small blue lighten-5 blue-text z-depth-0">
+                        <span><i class="material-icons icon-folder-open"></i></span>
+                        <input type="file" id="carpeta-input" webkitdirectory>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" name="carpeta" type="text" id="carpeta">
+                    </div>
+                </div>
+                <div class="col s12">
+                    <ul class="collapsible z-depth-0">
+                        <li>
+                            <div class="collapsible-header">Más datos</div>
+                            <div class="collapsible-body">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" placeholder="Fecha de publicación" id="fechaPublicacion"
+                                            name="fechaPublicacion" class="datepicker">
+                                        <label for="fechaPublicacion" class="">Fecha publicación</label>
+                                    </div>
+                                    <div class="col s12">
+                                        <p class="portada">Portada</p>
+                                        <select id="cambiar-tipo-imagen">
+                                            <option value="imagen">Imagen</option>
+                                            <option value="url">URL</option>
+                                        </select>
+                                        <label for="cambiar-tipo-imagen">Seleccionar portada</label>
+                                    </div>
+                                    <div class="file-field input-field col s12" id="cambiar-portada">
+                                        <div class="btn btn-small blue" id="cambiar-portada-input">
+                                            <span><i class="material-icons icon-picture"></i></span>
+                                            <input type="file" id="portada-input" accept="image/*">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path" type="text" name="portada" id="portada">
+                                        </div>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input type="number" placeholder="Duración" name="duracion" id="duracion">
+                                        <label for="duracion">Duración (min)</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input type="text" placeholder="Manga" name="origen" id="origen">
+                                        <label for="origen">Origen</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <a class="dropdown-trigger-inputs btn btn-block dropdown-estudios z-depth-0"
+                                            href='#' data-target='dropdown-studio'>
+                                            Estudios
+                                            <span class="right">
+                                                <svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7 10l5 5 5-5z"></path>
+                                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <ul id='dropdown-studio' class='dropdown-content inputs'>
+                                            <li class="row" id="row-studio">
+                                                <input type="text" id="estudio" placeholder="Estudio" class="col s6">
+                                                <input type="text" id="estudio-url" placeholder="URL" class="col s5">
+                                                <div class="col s1 dropdown-trash">
+                                                    <a id="btn-delete-row" class="red lighten-5 white-text">
+                                                        <i class="material-icons icon-trash-empty"></i>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a id="btn-add-row"
+                                                    class="btn-small green lighten-2 green-text text-lighten-5 btn-inputs"><i
+                                                        class="material-icons icon-plus"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <div class="chips chips-generos">
+                                            <input class="custom-class" id="generos" name="generos">
+                                        </div>
+                                        <label for="generos">Generos</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 center">
+                    <button class="btn green waves-effect waves-light green-text text-lighten-5" type="submit"
+                        name="action" id="submit-editar">
+                        Editar
+                        <i class="material-icons right icon-pencil"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="col s12">
+                <h5>Zona de peligro</h5>
+            </div>
+            <div class="col s12 danger-border">
+                <h5>
+                    Borrar anime
+                    <a class="right waves-effect waves-light btn transparent red-text" id="borrar-anime">Borrar<i
+                            class="icon-trash-empty material-icons right"></i></a>
+                </h5>
+                <p class="paragraph-btn-right grey-text text-darken-2">Una vez borrado el anime todavia es posible
+                    recuperarlo en el
+                    Historial.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script>
+        require('../../js/editar-anime-init.js')
+    </script>
+</body>
+
+</html>

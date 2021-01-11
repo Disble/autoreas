@@ -1,0 +1,1315 @@
+html {
+	color: hsla(0, 0%, 20%, 1);
+}
+
+:root {
+	--icon-hover: #4fd8fe;
+	--border-color: #1ca7ce;
+	--blue-color: #039be5;
+	--red-materialize: #f44336;
+	--blue-grey: #eceff1;
+	/* Colors dark mode */
+	--d-dark: #121212;
+	--d-dark__ligthen-1: hsl(0, 0%, 11%);
+	--d-dark__ligthen-2: hsl(0, 0%, 15%);
+	--d-dark__ligthen-3: hsl(0, 0%, 19%);
+	--d-dark__ligthen-4: hsl(0, 0%, 24%);
+	--d-white: hsla(0, 0%, 100%, 0.87);
+	--d-white__darken-1: hsla(0, 0%, 100%, 0.60);
+	--d-white__darken-2: hsla(0, 0%, 100%, 0.38);
+	--d-white__darken-3: hsla(0, 0%, 100%, 0.19);
+}
+
+.blue-grey-text.lighten-5 {
+	color: var(--blue-grey) !important;
+}
+
+.barra-sumar {
+	display: flex;
+	position: relative;
+	align-items: center;
+}
+
+.barra-sumar>hr {
+	width: 100%;
+}
+
+.barra-sumar>a {
+	display: flex;
+	justify-content: center;
+}
+
+.triangle {
+	top: 10px;
+	position: absolute;
+	right: 34px;
+	border-right: 25px solid #2196F3;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	z-index: 2;
+}
+
+.titulo {
+	text-transform: capitalize;
+}
+
+.btnIncremento {
+	width: 105px;
+}
+
+.btn-small {
+	padding: 0 1rem;
+	font-size: 0.9em !important;
+	font-weight: 300;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile+label {
+	font-size: 0.8em;
+	text-align: center;
+	padding: 6px 4px;
+	font-weight: bold;
+	/* color: white; */
+	width: 80px;
+	border-radius: 4px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-x-center {
+	justify-content: center;
+}
+
+.flex-y-center {
+	align-items: center;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.vh-100 {
+	height: 100vh;
+}
+
+.hidden {
+	display: none;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.dropdown-content li>a>i.no-margin,
+.no-margin {
+	margin: 0;
+}
+
+.btn-eliminar-anime {
+	padding: 4px 10px;
+	border-radius: 11px;
+	color: hsla(354, 100%, 20%, 1) !important;
+	font-weight: 500;
+}
+
+.btn-repetir-anime {
+	padding: 4px 10px;
+	border-radius: 11px;
+	color: hsla(207, 89%, 20%, 1) !important;
+	font-weight: 500;
+}
+
+.btn-restaurar-anime {
+	padding: 4px 10px;
+	border-radius: 11px;
+	color: hsla(36, 100%, 20%, 1) !important;
+	font-weight: 500;
+}
+
+.btn-eliminar-anime i,
+.btn-restaurar-anime i {
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+.btn-eliminar-anime a,
+.btn-restaurar-anime a {
+	font-weight: 500;
+}
+
+.history-list>tr>td {
+	position: relative;
+	padding-right: 20px;
+}
+
+.history-list>tr>td>i.icon-state-trash {
+	position: absolute;
+	top: calc(50% - 11px);
+	right: 0;
+}
+
+table.highlight>tbody>tr:hover {
+	background-color: var(--icon-hover);
+	cursor: pointer;
+}
+
+.icon-pag,
+.icon-med {
+	font-size: 1.2em !important;
+}
+
+.icon-state-historial {
+	font-size: 1.4em;
+}
+
+.icon-normal {
+	font-size: 1em !important;
+}
+
+.move-icon-cap {
+	position: relative;
+	left: 1px;
+	top: 1px;
+}
+
+.icon-big {
+	font-size: 24px;
+}
+
+.pagination li.active {
+	background-color: #40b8d9;
+}
+
+.text-icon {
+	width: 100%;
+}
+
+.hover-icon-complete:hover {
+	cursor: pointer;
+	text-decoration: var(--icon-hover);
+	color: var(--icon-hover) !important;
+	/* Este !important es porque los de materialize ponen sus clases con !important y asi no se puede ¬¬ */
+}
+
+.btn-sortable:hover {
+	cursor: move;
+}
+
+.border-top {
+	border-top: 1px solid var(--border-color);
+}
+
+.border-bottom {
+	border-bottom: 1px solid var(--border-color);
+}
+
+.border-right {
+	border-right: 1px solid var(--border-color);
+}
+
+.border-left {
+	border-left: 1px solid var(--border-color);
+}
+
+.border-solid {
+	border: 1px solid var(--border-color);
+}
+
+.editable-pen:hover {
+	border: 1px solid var(--border-color);
+}
+
+.editable-pen.mh-small {
+	/* mh : min-height */
+	min-height: 65px;
+}
+
+.pr-20 {
+	padding-right: 20px;
+}
+
+.pl-10 {
+	padding-left: 10px;
+}
+
+.pl-20 {
+	padding-left: 20px;
+}
+
+.mt-40 {
+	margin-top: 40px;
+}
+
+.mt-30 {
+	margin-top: 30px;
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.mt-10 {
+	margin-top: 10px;
+}
+
+.mb-10 {
+	margin-bottom: 10px;
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.mb-40 {
+	margin-bottom: 40px;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.mt-0 {
+	margin-top: 0;
+}
+
+.mr-10 {
+	margin-right: 10px;
+}
+
+.mr-20 {
+	margin-right: 20px;
+}
+
+.mr-30 {
+	margin-right: 30px;
+}
+
+.mr-40 {
+	margin-right: 40px;
+}
+
+.ml-0 {
+	margin-left: 0;
+}
+
+.ml-10 {
+	margin-left: 10px;
+}
+
+.ml-20 {
+	margin-left: 20px;
+}
+
+.ml-30 {
+	margin-left: 30px;
+}
+
+.ml-40 {
+	margin-left: 40px;
+}
+
+.overflow-a {
+	overflow: auto;
+}
+
+.float-l {
+	float: left;
+}
+
+.float-r {
+	float: right;
+}
+
+.block {
+	width: 100%;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.wrap-one-line {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.dropdown-content li>a,
+.dropdown-content[class*="multiple-select-dropdown"] li>span {
+	font-size: small;
+	color: var(--border-color);
+	line-height: initial;
+	padding: 1px 16px;
+	position: relative;
+	top: 10px;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+	font-size: small;
+	color: var(--border-color);
+	line-height: initial;
+}
+
+[type="checkbox"]+span:not(.lever):before,
+[type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+	width: 15px;
+	height: 15px;
+	top: 2.5px;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+	width: 8px;
+	height: 18px;
+	border-right-color: #4caf50;
+	border-bottom-color: #4CAF50;
+}
+
+.select-dropdown li.optgroup~li.optgroup-option {
+	padding-left: 0;
+}
+
+.dropdown-content li {
+	min-height: 45px;
+}
+
+.title-historial {
+	padding-left: 45px;
+}
+
+.container-big {
+	width: 97%;
+}
+
+select.browser-default {
+	min-width: 90px;
+}
+
+.datos-anime-nuevo input[type="number"]:not(.this-not) {
+	max-width: 50px;
+}
+
+.datos-anime-nuevo .input-field.days {
+	width: 220px;
+}
+
+.datos-anime-nuevo .dropdown-trigger {
+	font-size: 0.8em;
+}
+
+.chart-container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100vh;
+	width: 98vw;
+}
+
+/* Ver Animes */
+.anime-list .collection a.collection-item {
+	color: var(--blue-color);
+}
+
+/* EDITAR ANIMES */
+/* Inicio Dropdown inputs */
+.dropdown-trigger-inputs {
+	cursor: pointer;
+}
+
+.dropdown-content.inputs {
+	width: inherit !important;
+	/* Este important es porque tiene valores aplicados js y solo así se puede quitar */
+}
+
+.dropdown-content.inputs .row,
+.dropdown-content.days .row {
+	margin: 0;
+}
+
+.dropdown-content.inputs .row .dropdown-trash {
+	min-height: 45px;
+	padding: 0;
+}
+
+.dropdown-content.inputs .row .dropdown-trash a {
+	display: flex;
+	width: 99%;
+	min-height: 43px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3em;
+}
+
+.dropdown-content.inputs .row .dropdown-trash a:hover {
+	color: #FFEBEE !important;
+	/* Este important es porque materializecss pone en sus colores important */
+	background-color: var(--red-materialize) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+	border: 1px solid var(--red-materialize);
+}
+
+.dropdown-content.inputs .row>input:first-child {
+	border-right: 1px solid #9e9e9e;
+	width: calc(50% - 6px);
+}
+
+.no-underline {
+	border: 0 !important;
+	/* es para ganarle a la especifidad de materializecss */
+}
+
+.dropdown-content.days .row label {
+	min-height: 43px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.dropdown-content.days .row label span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px;
+}
+
+.dropdown-content.inputs .row>input {
+	padding-left: 5px;
+	width: calc(41.6666666667% - 5px);
+}
+
+.dropdown-content.inputs a.btn-inputs {
+	display: flex;
+	justify-content: center;
+}
+
+.dropdown-content.inputs a.btn-inputs>i {
+	display: flex;
+	align-items: center;
+}
+
+/* Fin Dropdown inputs */
+.edit-anime-list .chips+label {
+	position: absolute;
+	top: -20px;
+}
+
+.edit-anime-list p.portada {
+	color: #9e9e9e;
+	font-size: 0.85em;
+}
+
+.edit-anime-list .collection.with-header .collection-header {
+	padding: 5px 10px;
+}
+
+.edit-anime-list .collection .collection-item,
+.anime-paginas-list .collection .collection-item {
+	padding: 5px 10px;
+}
+
+.edit-anime-list .collection.with-header .collection-item {
+	padding-left: 30px;
+}
+
+.paragraph-btn-right {
+	padding-right: 160px;
+}
+
+.danger-border {
+	border: 2px solid hsla(354, 66%, 80%, 1);
+}
+
+.normal-border {
+	border: 1px solid #d1d5da
+}
+
+.badge-left-edit {
+	position: absolute;
+	left: 2px;
+	width: 24px;
+	overflow-x: auto;
+}
+
+.select-wrapper+label {
+	width: 100%;
+}
+
+.select-wrapper+label::after {
+	content: attr(data-value);
+	opacity: 1;
+	top: 57px;
+	color: red;
+}
+
+.error-line.select-wrapper>input[class*="select-dropdown"] {
+	border-bottom: 1px solid var(--red-materialize);
+	-webkit-box-shadow: 0 1px 0 0 var(--red-materialize);
+	box-shadow: 0 1px 0 0 var(--red-materialize);
+}
+
+.push-autocomplete ul.dropdown-content {
+	position: relative;
+}
+
+/* Estilos Opciones */
+.collection-options .collection-item.avatar .secondary-content {
+	top: 25px;
+}
+
+.collection-options .collection-item.avatar {
+	min-height: 68px;
+}
+
+/* Estilo Información Anime */
+.info .input-field {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.name-info {
+	margin-bottom: 9px;
+	font-weight: bold;
+}
+
+.info-subtitle {
+	font-size: 1.4em;
+	color: hsla(0, 0%, 75%, 1) !important;
+	/*este important es para superar la especificidad de materialize*/
+}
+
+.info-margin-cap {
+	margin-top: 50px;
+}
+
+.info-cap-vistos {
+	padding-left: 60px;
+	font-weight: bold;
+}
+
+.info-cap-hashtag {
+	position: relative;
+	top: 16px;
+	font-size: 31px;
+}
+
+.info-cap-hashtag::before {
+	height: 31px;
+}
+
+.info-data-icon {
+	color: hsla(0, 0%, 75%, 1);
+}
+
+.info-cap-sub {
+	font-size: 1.3em;
+	margin-left: 60px;
+	font-weight: bold;
+}
+
+.info-cap-separate {
+	margin-top: 8px;
+}
+
+.info-cover-shadow {
+	-webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 10px 2px rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 10px 2px rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.info-cover {
+	height: 170px;
+	width: 170px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.btn-return {
+	padding: 0 6px;
+}
+
+/* Estilos del contenedor */
+.divider {
+	border: 2px solid hsl(210, 23%, 95%);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.semibold {
+	font-weight: 600;
+}
+
+/* Tamaño del scroll */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:active,
+::-webkit-scrollbar-thumb:hover {
+	background: #919193;
+}
+
+/* Styles Downloader */
+.icon-downloader {
+	position: absolute;
+	cursor: pointer;
+	top: 20px;
+	right: 20px;
+}
+
+.icon-downloader>img {
+	width: 25px;
+	height: 25px;
+}
+
+/*NEW VER ANIMES*/
+.ver-img-card {
+	background-size: cover;
+	width: 100px;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 10px 0 0 10px;
+}
+
+.ver-radius-card {
+	border-radius: 10px;
+}
+
+.ver-cap-vistos {
+	font-variant-numeric: oldstyle-nums;
+}
+
+.grey-text.darken-1 {
+	color: hsla(0, 0%, 40%, 1) !important;
+}
+
+.ver-folder-icon:hover {
+	color: #4CAF50 !important;
+}
+
+.ver-link-icon:hover {
+	color: #2196F3 !important;
+}
+
+.ver-sun-icon:hover {
+	color: #ffc107 !important;
+}
+
+.card-content.ver-card-content {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.ver-day-title {
+	margin-top: 16px;
+}
+
+.modal-radius {
+	border-radius: 10px;
+}
+
+.modal-footer.ver-modal-footer {
+	/*para borrar*/
+	height: 28px;
+}
+
+.ver-modal-close {
+	right: 10px;
+	position: relative;
+}
+
+.ver-default-image {
+	max-width: 350px;
+}
+
+.dropdown-dias,
+.dropdown-estudios {
+	background-color: transparent;
+	border-bottom: 1px solid #9e9e9e;
+	padding: 0;
+	font-size: 16px;
+	text-align: left;
+	text-transform: capitalize;
+}
+
+.dropdown-estudios span {
+	position: relative;
+	top: 5px;
+}
+
+.dropdown-dias:hover,
+.dropdown-estudios:hover {
+	background-color: transparent;
+	color: #000 !important;
+}
+
+.dropdown-dias.btn,
+.dropdown-estudios.btn {
+	color: #000;
+}
+
+.dropdown-dias:focus,
+.dropdown-estudios:focus {
+	background-color: transparent;
+	color: #000 !important;
+}
+
+.dropdown-error {
+	border-bottom: 1px solid var(--red-materialize);
+	-webkit-box-shadow: 0 1px 0 0 var(--red-materialize) !important;
+	/* estos !important son por la class z-depth-0*/
+	box-shadow: 0 1px 0 0 var(--red-materialize) !important;
+	/* estos !important son por la class z-depth-0*/
+}
+
+.datos-anime-nuevo .dropdown-dias {
+	font-size: 16px;
+}
+
+.preloader-wrapper.big.bigger {
+	width: 128px;
+	height: 128px;
+}
+
+.circle-clipper .circle {
+	border-width: 5px;
+}
+
+/* Rewrite Swal */
+.warning-swal {
+	border-top: 6px solid #f9a825;
+}
+
+.error-swal {
+	border-top: 6px solid #d50000;
+}
+
+.success-swal {
+	border-top: 6px solid #b9f6ca;
+}
+
+.info-swal {
+	border-top: 6px solid #448aff;
+}
+
+.swal-button:focus {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.swal-footer {
+	background-color: var(--blue-grey);
+	margin-top: 32px;
+	overflow: hidden;
+}
+
+.swal-button--confirm {
+	/* este !important es por la clase button:focus de materializecss */
+	color: #0D47A1 !important;
+	/* este !important es por la clase button:focus de materializecss */
+	background-color: #BBDEFB !important;
+}
+
+.swal-button--danger {
+	color: #B71C1C !important;
+	/* este !important es por la clase button:focus de materializecss */
+	background-color: #FFCDD2 !important;
+}
+
+.swal-button--cancel {
+	/* este !important es por la clase button:focus de materializecss */
+	background-color: transparent !important;
+}
+
+.swal-preload-modal {
+	width: 333px;
+}
+
+/* ================================================================== */
+/* ============================= DARK MODE ========================== */
+/* ================================================================== */
+body.dark-mode {
+	color: var(--d-white__darken-1);
+}
+
+.dark-mode {
+	background-color: var(--d-dark);
+}
+
+/* Texts */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode input,
+.dark-mode .input {
+	color: var(--d-white);
+}
+
+/* Collapsible */
+
+.dark-mode .collapsible,
+.dark-mode .collapsible .collapsible-header,
+.dark-mode .collapsible .collapsible-body,
+.dark-mode .collapsible .collapsible-body a {
+	border-color: var(--d-dark__ligthen-4);
+	color: var(--d-white__darken-1);
+}
+
+.dark-mode .collapsible-header:focus {
+	background-color: var(--d-dark__ligthen-4);
+}
+
+.dark-mode .collapsible-header,
+.dark-mode .collapsible-body .collection a {
+	background-color: var(--d-dark);
+}
+
+.dark-mode .collapsible.popout .collapsible-header,
+.dark-mode .collapsible.popout .collapsible-body {
+	background-color: var(--d-dark__ligthen-1);
+	-webkit-transition: background 400ms ease-in-out;
+	-moz-transition: background 400ms ease-in-out;
+	-ms-transition: background 400ms ease-in-out;
+	-o-transition: background 400ms ease-in-out;
+	transition: background 400ms ease-in-out;
+}
+
+.dark-mode .collapsible.popout .active .collapsible-header,
+.dark-mode .collapsible.popout .active .collapsible-body {
+	background-color: var(--d-dark__ligthen-2);
+	-webkit-transition: background 400ms ease-in-out;
+	-moz-transition: background 400ms ease-in-out;
+	-ms-transition: background 400ms ease-in-out;
+	-o-transition: background 400ms ease-in-out;
+	transition: background 400ms ease-in-out;
+}
+
+/* Card */
+.dark-mode .card {
+	background-color: var(--d-dark__ligthen-1);
+}
+
+.dark-mode .card .btn.disabled {
+	background-color: var(--d-dark__ligthen-3) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+}
+
+.dark-mode .card .btn.disabled i {
+	color: var(--d-white__darken-2);
+}
+
+.dark-mode .card .card-content .btn .waves-ripple {
+	background-color: var(--d-dark__ligthen-2);
+}
+
+.dark-mode .card #anime-minus {
+	/* color: hsl(4, 90%, 58%) !important; */
+	color: hsl(4, 80%, 68%) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+}
+
+.dark-mode .card #anime-plus {
+	/* color: hsl(207, 90%, 54%) !important; */
+	color: hsl(207, 80%, 64%) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+}
+
+.dark-mode .collection a.collection-item:not(.active):hover {
+	background-color: hsl(0, 0%, 15%);
+}
+
+/* Modal */
+.dark-mode .modal,
+.dark-mode .modal .modal-footer {
+	background-color: var(--d-dark__ligthen-1) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+}
+
+.dark-mode .modal .modal-content {
+	background-color: var(--d-dark) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+}
+
+.dark-mode .modal .modal-content .btn {
+	color: var(--d-white) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+}
+
+.dark-mode .modal .modal-content .btn .waves-ripple {
+	background-color: var(--d-dark__ligthen-1);
+}
+
+/* Collection */
+.dark-mode .collection .collection-header,
+.dark-mode .collection .collection-item {
+	background-color: var(--d-dark);
+}
+
+.dark-mode .collection,
+.dark-mode .collection .collection-header,
+.dark-mode .collection .collection-item {
+	border-color: var(--d-dark__ligthen-4);
+}
+
+.dark-mode .dropdown-dias.btn {
+	color: var(--d-white);
+}
+
+.dark-mode .dropdown-dias.btn:hover,
+.dark-mode .dropdown-dias.btn:focus,
+.dark-mode .dropdown-estudios.btn:hover,
+.dark-mode .dropdown-estudios.btn:focus {
+	color: var(--d-white) !important;
+	/* Este important es porque materializecss pone en sus colores important */
+}
+
+.dark-mode .caret {
+	fill: var(--d-white__darken-1);
+}
+
+/* Dropdown */
+.dark-mode .dropdown-content {
+	background-color: var(--d-dark__ligthen-1);
+}
+
+.dark-mode .modal .dropdown-content {
+	background-color: var(--d-dark__ligthen-2) !important;
+}
+
+.dark-mode .dropdown-content li span .highlight {
+	color: var(--d-white__darken-1);
+}
+
+.dark-mode .dropdown-content li:hover, 
+.dark-mode .dropdown-content li.active {
+	background-color: var(--d-dark__ligthen-4);
+}
+
+.dark-mode.keyboard-focused .select-dropdown.dropdown-content li:focus,
+.dark-mode.keyboard-focused .dropdown-content li:focus,
+.dark-mode .keyboard-focused .collapsible-header:focus {
+	background-color: var(--d-dark__ligthen-4);
+}
+
+.dark-mode .select-dropdown li.disabled>span {
+	color: var(--d-white__darken-2);
+}
+
+.dark-mode .select-dropdown li.optgroup>span {
+	color: var(--d-white__darken-2);
+}
+
+.dark-mode .select-dropdown li.optgroup {
+	border-top-color: var(--d-white__darken-3);
+}
+
+.dark-mode .dropdown-content li:hover {
+	background-color: var(--d-dark__ligthen-4);
+}
+
+.dark-mode .dropdown-content.inputs .row .dropdown-trash a:hover {
+	background-color: hsl(4, 70%, 68%) !important;
+	border: 1px solid hsl(4, 70%, 68%);
+	color: var(--d-white) !important;
+}
+
+.dark-mode [type="checkbox"]:not(:checked):disabled+span:not(.lever):before {
+	background-color: var(--d-white__darken-3);
+}
+
+/* table */
+.dark-mode table tr {
+	border-bottom-color: var(--d-dark__ligthen-2);
+}
+
+.dark-mode table.highlight>tbody>tr:hover {
+	/* background-color: hsl(193, 99%, 65%); */
+	background-color: hsl(193, 49%, 44%);
+}
+
+.dark-mode table.highlight>tbody>tr:hover td {
+	color: var(--d-white);
+}
+
+.dark-mode table .history-list i.icon-play {
+	/* color: hsl(122, 39%, 49%) !important; */
+	color: hsl(122, 39%, 59%) !important;
+}
+
+.dark-mode table .history-list i.icon-pause {
+	/* color: hsl(36, 100%, 50%) !important; */
+	color: hsl(36, 70%, 60%) !important;
+}
+
+.dark-mode table .history-list i.icon-emo-unhappy {
+	/* color: hsl(4, 90%, 58%) !important; */
+	color: hsl(4, 70%, 74%) !important;
+}
+
+.dark-mode table .history-list i.icon-ok-squared {
+	/* color: hsl(174, 100%, 29%) !important; */
+	color: hsl(174, 70%, 39%) !important;
+}
+
+/* Switch */
+.dark-mode .switch label .lever {
+	background-color: var(--d-dark__ligthen-3);
+}
+
+.dark-mode .switch label .lever:after {
+	background-color: var(--d-white__darken-1);
+}
+
+/* Forms */
+.dark-mode input::placeholder {
+	color: var(--d-white__darken-3);
+}
+
+.dark-mode input:not([type]),
+.dark-mode input[type=text]:not(.browser-default),
+.dark-mode input[type=password]:not(.browser-default),
+.dark-mode input[type=email]:not(.browser-default),
+.dark-mode input[type=url]:not(.browser-default),
+.dark-mode input[type=time]:not(.browser-default),
+.dark-mode input[type=date]:not(.browser-default),
+.dark-mode input[type=datetime]:not(.browser-default),
+.dark-mode input[type=datetime-local]:not(.browser-default),
+.dark-mode input[type=tel]:not(.browser-default),
+.dark-mode input[type=number]:not(.browser-default),
+.dark-mode input[type=search]:not(.browser-default),
+.dark-mode textarea.materialize-textarea,
+.dark-mode .dropdown-dias,
+.dark-mode .dropdown-estudios {
+	border-bottom-color: var(--d-white__darken-2);
+}
+
+.dark-mode .input-field>label {
+	color: var(--d-white__darken-2);
+}
+
+.dark-mode textarea.materialize-textarea {
+	color: var(--d-white);
+}
+
+/* COLORS */
+.dark-mode span.badge {
+	color: var(--d-white__darken-3) !important;
+}
+
+.dark-mode .edit-anime-list .grey-text {
+	color: var(--d-white__darken-3) !important;
+}
+
+.dark-mode .green {
+	/* background-color: hsl(122, 39%, 49%) !important; */
+	background-color: hsl(130, 25%, 49%) !important;
+}
+
+.dark-mode .blue {
+	/* background-color: hsl(207, 90%, 54%) !important; */
+	background-color: hsl(207, 70%, 64%) !important;
+}
+
+.dark-mode .red {
+	/* background-color: hsl(4, 90%, 58%) !important; */
+	background-color: hsl(4, 70%, 58%) !important;
+}
+
+.dark-mode .red-text {
+	/* color: #F44336 !important; */
+	color: hsl(4, 70%, 68%) !important;
+}
+
+.dark-mode .blue-text {
+	/* color: hsl(207, 90%, 54%) !important; */
+	color: hsl(207, 80%, 74%) !important;
+}
+
+/* color + darken/ligthen */
+.dark-mode .blue-text.text-darken-4 {
+	color: var(--d-white) !important;
+}
+
+.dark-mode .blue.lighten-1 {
+	background-color: hsl(207, 70%, 51%) !important;
+}
+
+.dark-mode .lighten-5 {
+	background-color: var(--d-dark__ligthen-1) !important;
+}
+
+/* Others */
+.dark-mode .danger-border {
+	border-color: hsla(354, 66%, 60%, 1);
+}
+
+.dark-mode .barra-sumar .triangle {
+	border-right-color: hsl(207, 70%, 64%);
+}
+
+.dark-mode .barra-sumar i {
+	color: var(--d-white) !important;
+}
+
+.dark-mode .datos-anime-nuevo .icon-dot-3 {
+	color: var(--d-white__darken-1);
+}
+
+.dark-mode .divider {
+	border-color: var(--d-dark__ligthen-1);
+}
+
+.dark-mode .barra-sumar hr {
+	border-color: var(--d-white__darken-2);
+}
+
+.dark-mode .chip {
+	background-color: var(--d-white);
+}
+
+/* pagination */
+.dark-mode .pagination li a {
+	color: var(--d-white__darken-1);
+}
+
+.dark-mode .pagination li.disabled a {
+	color: var(--d-white__darken-3);
+}
+
+.dark-mode .pagination li.active a {
+	background-color: hsl(193, 57%, 65%);
+	color: hsl(193, 37%, 10%);
+}
+
+/* INFO */
+.dark-mode .info .info-cover {
+	background-color: white;
+}
+
+.dark-mode .info .red.lighten-4 {
+	background-color: #FFCDD2 !important;
+}
+
+.dark-mode .info .btn-eliminar-anime {
+	color: hsla(354, 100%, 20%, 1) !important;
+}
+
+.dark-mode .info .blue.lighten-4,
+.dark-mode .settings .blue.lighten-4 {
+	background-color: #BBDEFB !important;
+}
+
+.dark-mode .info .btn-repetir-anime {
+	color: hsla(207, 89%, 20%, 1) !important;
+}
+
+.dark-mode .info .btn-restaurar-anime {
+	color: hsla(36, 100%, 20%, 1) !important;
+}
+
+.dark-mode .info .info-subtitle {
+	color: var(--d-white__darken-2) !important;
+}
+
+/* SETTINGS */
+.dark-mode .settings .blue-text {
+	color: #2196F3 !important;
+}
+
+.dark-mode .settings .green.lighten-4 {
+	background-color: #C8E6C9 !important;
+}
+
+.dark-mode .settings .collection a {
+	color: hsl(207, 80%, 74%);
+}
+
+.dark-mode .settings .collection .secondary-content {
+	color: hsl(207, 80%, 74%) !important;
+}
+
+/* Dark Swal */
+.dark-mode .swal-modal {
+	background-color: var(--d-dark__ligthen-1);
+}
+
+.dark-mode .swal-footer {
+	background-color: var(--d-dark__ligthen-2);
+}
+
+.dark-mode .swal-title,
+.dark-mode .swal-text,
+.dark-mode .swal-footer,
+.dark-mode .swal-button {
+	color: var(--d-white);
+}
+
+.dark-mode .swal-icon--success:before,
+.dark-mode .swal-icon--success:after,
+.dark-mode .swal-icon--success__hide-corners {
+	background-color: hsla(0, 0%, 11%, 0.2);
+}
+
+.dark-mode .swal-icon--success__ring {
+	border-color: hsla(0, 0%, 11%, 0);
+}
+
+.dark-mode .warning-swal {
+	border-top-color: hsl(37, 75%, 66%);
+}
+
+.dark-mode .error-swal {
+	border-top-color: hsl(0, 70%, 62%);
+}
+
+.dark-mode .success-swal {
+	border-top-color: #a5dc86;
+}
+
+.dark-mode .info-swal {
+	border-top-color: hsl(218, 70%, 63%);
+}
+
+/* Dark scroll bar */
+@media (prefers-color-scheme: dark) {
+	::-webkit-scrollbar-thumb {
+		background: hsl(0, 0%, 20%);
+	}
+
+	::-webkit-scrollbar-thumb:active,
+	::-webkit-scrollbar-thumb:hover {
+		background: hsl(240, 1%, 30%);
+	}
+}

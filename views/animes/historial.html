@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Historial</title>
+	<link rel="stylesheet" type="text/css" href="../../node_modules/materialize-css/dist/css/materialize.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/app.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/fontello.css" />
+</head>
+
+<body>
+	<div class="row">
+		<div class="col s12">
+			<h3 class="center title-historial">Historial
+				<a class="modal-trigger" href="#modal-search">
+					<i class="icon-search deep-blue-text icon-big hover-icon-complete float-r tooltipped"
+						data-position="left" data-tooltip="¡Encuentra el anime que estas buscando!"></i>
+				</a>
+				<i id="filter-history" class="icon-filter indigo-text icon-big hover-icon-complete float-r"></i>
+				<i id="reload-history"
+					class="icon-arrows-cw indigo-text icon-big hover-icon-complete float-r tooltipped hidden"
+					data-position="left" data-tooltip="Cargar el historial completo"></i>
+			</h3>
+			<!-- Modal Structure -->
+			<div id="modal-search" class="modal">
+				<div class="modal-content push-autocomplete">
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="icon-pag icon-search prefix"></i>
+							<input id="search-history" type="text" class="validate autocomplete">
+							<label for="search-history">Buscar</label>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer hidden">
+					<a href="#!" id="search-confirm"
+						class="modal-action modal-close waves-effect btn-flat blue-text">Buscar</a>
+					<a href="#!" class="modal-action modal-close waves-effect btn-flat red-text">Cancelar</a>
+				</div>
+			</div>
+			<div id="div-filter" show="false" class="row hidden">
+				<div class="input-field col s3">
+					<select id="estado-select" multiple>
+						<option value="" disabled>Estado</option>
+					</select>
+					<label>Estado</label>
+				</div>
+				<div class="input-field col s3">
+					<select id="tipo-select" multiple>
+						<option value="" disabled>Tipo</option>
+					</select>
+					<label>Tipo</label>
+				</div>
+				<div class="input-field col s3">
+					<select id="orden-select">
+						<option value="" disabled>Orden</option>
+						<option value="1">Nombre A-Z</option>
+						<option value="2">Últ Cap Visto</option>
+						<option value="3">Fecha Creación</option>
+					</select>
+					<label>Orden</label>
+				</div>
+				<div class="col s3 mt-20 center">
+					<button class="btn btn-small waves-effect waves-light blue" id="btn-filter">Filtrar
+						<i class="right icon-filter"></i>
+					</button>
+				</div>
+			</div>
+			<div id="container-historial">
+				<table class="bordered centered highlight">
+					<thead>
+						<tr>
+							<th>Núm</th>
+							<th>Nombre</th>
+							<th>Núm Cap Vistos</th>
+							<th>Fecha Últ Cap Visto</th>
+							<th>Día</th>
+							<th>Hora</th>
+							<th>Estado</th>
+						</tr>
+					</thead>
+					<tbody id="contenido" class="history-list">
+					</tbody>
+				</table>
+				<ul class="pagination center" id="paginas">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		require('../../js/historial-init.js')
+	</script>
+</body>
+
+</html>

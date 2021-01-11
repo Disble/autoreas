@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Agregar</title>
+  <link rel="stylesheet" type="text/css" href="../../node_modules/materialize-css/dist/css/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/app.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/fontello.css" />
+</head>
+
+<body>
+  <div class="row">
+    <div class="col s12">
+      <h3 class="center">Agregar</h3>
+      <div class="container">
+        <form id="submitPendiente">
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="Boku no Hero Academia" id="nombre" type="text" class="validate" required>
+              <label for="nombre">Nombre</label>
+            </div>
+            <div class="input-field col s12">
+              <input placeholder="No obligatorio" id="pagina" type="text" class="validate">
+              <label for="pagina">Pagina</label>
+            </div>
+            <div class="input-field col s12">
+              <textarea id="detalles" class="materialize-textarea" required></textarea>
+              <label for="detalles">Detalles</label>
+            </div>
+            <div class="col s12 center">
+              <button class="btn waves-effect waves-light green" type="submit" name="action">
+                Agregar
+                <i class="material-icons right icon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>require('../../js/pen-agregar-init.js')</script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Opciones</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/materialize-css/dist/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontello.css" />
+</head>
+
+<body>
+    <div class="row settings">
+        <div class="col s4 no-padding">
+            <ul class="collection with-header no-margin collection-options">
+                <li class="collection-header">
+                    <h5 class="blue-grey-text">Opciones</h5>
+                </li>
+                <li class="collection-item avatar valign-wrapper">
+                    <i class="material-icons circle icon-sun-inv blue lighten-4 blue-text"></i>
+                    <a href="#!" id="conf-dias">Días <i
+                            class="material-icons icon-right-open secondary-content blue-text"></i></a>
+                </li>
+                <li class="collection-item avatar valign-wrapper">
+                    <i class="material-icons circle icon-rocket green lighten-4 green-text"></i>
+                    <a href="#!" id="conf-downloader">Gestor de descargas <i
+                            class="material-icons icon-right-open secondary-content blue-text"></i></a>
+                </li>
+                <li class="collection-item avatar valign-wrapper">
+                    <i class="material-icons circle icon-export orange lighten-4 orange-text"></i>
+                    <a href="#!" id="conf-exportar">Respaldos <i
+                            class="material-icons icon-right-open secondary-content blue-text"></i></a>
+                </li>
+                <li class="collection-item avatar valign-wrapper">
+                    <i class="material-icons circle icon-flag purple lighten-4 purple-text"></i>
+                    <a href="#!" id="conf-temporada">Modo temporada <i
+                            class="material-icons icon-right-open secondary-content blue-text"></i></a>
+                </li>
+                <li class="collection-item avatar valign-wrapper">
+                    <i class="material-icons circle icon-moon-inv grey lighten-2 blue-grey-text text-darken-4"></i>
+                    <a href="#!" id="conf-dark-mode">Modo oscuro <i
+                            class="material-icons icon-right-open secondary-content blue-text"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col s8" id="conf-data">
+            <div class="col s12">
+                <h5 id="conf-title"></h5>
+            </div>
+            <div class="col s12" id="datos">
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script>
+        require('../../js/opciones-init.js')
+    </script>
+</body>
+
+</html>

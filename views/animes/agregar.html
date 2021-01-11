@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agregar</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/materialize-css/dist/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontello.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center">Agregar</h3>
+        </div>
+    </div>
+    <div class="container container-big">
+        <form id="nuevaListaAnimes">
+            <table class="centered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Días</th>
+                        <th>Tipo</th>
+                        <th>Página</th>
+                        <th>Carpeta</th>
+                        <th>Más</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="datos-anime-nuevo" id="anime-0">
+                        <td><input type="text" name="nombre" placeholder="Shokugeki no Soma" class="validate" required>
+                        </td>
+                        <td>
+                            <div class="input-field days">
+                                <!-- Dropdown Trigger -->
+                                <a class='dropdown-trigger btn btn-block dropdown-dias z-depth-0 wrap-one-line' href='#'
+                                    data-target='dropdown-dias' dropdown-dias="drop-anime-0">
+                                    <span autoreas-droptext="dropdown-dias-text-0">Días</span>
+                                    <span class="right">
+                                        <svg class="caret" height="24" viewBox="0 0 24 24" width="24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 10l5 5 5-5z"></path>
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown-dias' autoreas-dropdias="drop-anime-0" class='dropdown-content days'>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field">
+                                <select id="tipo" name="tipo" class="validate" required>
+                                </select>
+                            </div>
+                        </td>
+                        <td><input type="text" name="pagina" class="validate"
+                                placeholder="https://animeflv.net/anime/1860/shokugeki-no-souma" required></td>
+                        <td>
+                            <input type="file" name="carpeta" id="file" class="inputfile" webkitdirectory />
+                            <label for="file" class="tooltipped blue lighten-4 blue-text text-darken-4"
+                                data-position="bottom" data-tooltip="Este campo no es obligatorio">Escoja
+                                una carpeta</label>
+                        </td>
+                        <td>
+                            <a class="modal-trigger icon-big black-text" href="#modal0"><i
+                                    class="material-icons icon-dot-3 flex flex-x-center"></i></a>
+                            <div id="modal0" class="modal bottom-sheet">
+                                <div class="modal-content left-align">
+                                    <h5 class="mb-20">Datos opcionales</h5>
+                                    <div class="row no-margin">
+                                        <div class="input-field col s4">
+                                            <input value="0" id="nrocapvisto" name="nrocapvisto" type="number" min="0"
+                                                class="validate this-not">
+                                            <label for="nrocapvisto">Número capítulos vistos</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input type="number" id="totalcap" name="totalcap" min="0"
+                                                class="tooltipped validate this-not" data-position="bottom"
+                                                data-delay="50" data-tooltip="Este campo no es obligatorio">
+                                            <label for="totalcap">Total de capítulos</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input type="number" class="this-not" name="duracion" id="duracion">
+                                            <label for="duracion">Duración (min)</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <p class="portada grey-text">Portada</p>
+                                            <select id="cambiar-tipo-imagen">
+                                                <option value="imagen">Imagen</option>
+                                                <option value="url">URL</option>
+                                            </select>
+                                            <label for="cambiar-tipo-imagen">Seleccionar portada</label>
+                                        </div>
+                                        <div class="file-field input-field col s12" id="cambiar-portada">
+                                            <div class="btn btn-small blue lighten-5 blue-text text-darken-4 z-depth-0"
+                                                id="cambiar-portada-input">
+                                                <span><i class="material-icons icon-picture"></i></span>
+                                                <input type="file" id="portada-input" name="portadainput"
+                                                    accept="image/*">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path" type="text" name="portada" id="portada">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5>
+                                        Remover fila
+                                        <a class="right waves-effect waves-light btn red" id="btn-borrar-fila"><i
+                                                class="icon-trash-empty material-icons right"></i>Eliminar</a>
+                                    </h5>
+                                    <p class="grey-text text-darken-2">Se removerá esta fila junto con sus datos.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="no-underline">
+                        <td colspan="8">
+                            <div class="barra-sumar">
+                                <hr>
+                                <div class="triangle"></div>
+                                <a id="agregarNuevoAnime" class="right btn-floating btn blue">
+                                    <i class="material-icons icon-plus icon-normal blue-text text-lighten-5"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="no-underline">
+                        <th colspan="8" class="center">
+                            <button class="btn green waves-effect waves-light" type="submit" name="action">
+                                Agregar
+                                <i class="material-icons right icon-pencil green-text text-lighten-5"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script>
+        require('../../js/agregar-anime-init.js');
+    </script>
+</body>
+
+</html>
