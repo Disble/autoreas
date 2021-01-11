@@ -24,7 +24,7 @@ let template = [
         },
         {
             label: 'Editar',
-            accelerator: 'CmdOrCtrl+2',
+            accelerator: 'CmdOrCtrl+3',
             click: function (item, focusedWindow) {
                 if (focusedWindow) {
                     if (focusedWindow.id === 1) {
@@ -37,7 +37,7 @@ let template = [
         },
         {
             label: 'Agregar',
-            accelerator: 'CmdOrCtrl+3',
+            accelerator: 'CmdOrCtrl+4',
             click: function (item, focusedWindow) {
                 if (focusedWindow) {
                     if (focusedWindow.id === 1) {
@@ -305,8 +305,8 @@ const createWindow = () => {
         }
     });
     window.setTitle('Autoreas');
-    // window.loadFile('public/index.html');
-    window.loadFile(path.join('views', 'animes', 'ver.html'));
+    window.loadFile('public/index.html');
+    // window.loadFile(path.join('views', 'animes', 'ver.html'));
 
     // Loading menu from menu template
     const menu = Menu.buildFromTemplate(template);
