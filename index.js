@@ -8,121 +8,121 @@ const { autoUpdater } = require('electron-updater');
 
 let template = [
     {
+        label: 'Steins Gate',
+        accelerator: 'CmdOrCtrl+S',
+        click: function (item, focusedWindow) {
+            if (focusedWindow) {
+                if (focusedWindow.id === 1) {
+                    BrowserWindow.getAllWindows().forEach(function (win) {
+                        win.loadFile(path.join(__dirname, 'public', 'index.html'));
+                    })
+                }
+            }
+        }
+    },
+    {
         label: 'Animes',
         submenu: [
             {
-            label: 'Ver',
-            accelerator: 'CmdOrCtrl+1',
-            click: function (item, focusedWindow) {
-                if (focusedWindow) {
-                    if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(function (win) {
-                            win.loadFile(path.join('views', 'animes', 'ver.html'));
-                        })
-                    }
-                }
-            }
-        },
-        {
-                label: 'Ver 2',
-                accelerator: 'CmdOrCtrl+2',
+                label: 'Ver',
+                accelerator: 'CmdOrCtrl+1',
                 click: function (item, focusedWindow) {
                     if (focusedWindow) {
                         if (focusedWindow.id === 1) {
                             BrowserWindow.getAllWindows().forEach(function (win) {
-                                win.loadFile(path.join(__dirname, 'public', 'index.html'));
+                                win.loadFile(path.join('views', 'animes', 'ver.html'));
                             })
                         }
                     }
                 }
             },
             {
-            label: 'Editar',
-            accelerator: 'CmdOrCtrl+3',
-            click: function (item, focusedWindow) {
-                if (focusedWindow) {
-                    if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(function (win) {
-                            win.loadFile(path.join('views', 'animes', 'editar.html'));
-                        })
+                label: 'Editar',
+                accelerator: 'CmdOrCtrl+3',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'editar.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                label: 'Agregar',
+                accelerator: 'CmdOrCtrl+4',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            // BrowserWindow.getAllWindows().forEach(function (win) {
+                            //     win.loadFile(path.join('views', 'animes', 'agregar.html'));
+                            // })
+                            const win = BrowserWindow.getFocusedWindow();
+                            win.loadFile(path.join('views', 'animes', 'agregar.html'));
+                        }
+                    }
+                }
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Historial',
+                accelerator: 'CmdOrCtrl+h',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                argsHistory = { pag: 1 };
+                                win.loadFile(path.join('views', 'animes', 'historial.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Capítulos vistos',
+                accelerator: 'CmdOrCtrl+g',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'viendo.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                label: 'Capítulos restantes',
+                accelerator: 'CmdOrCtrl+j',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'capitulos_restantes.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                label: 'Páginas',
+                accelerator: 'CmdOrCtrl+p',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'paginas.html'));
+                            })
+                        }
                     }
                 }
             }
-        },
-        {
-            label: 'Agregar',
-            accelerator: 'CmdOrCtrl+4',
-            click: function (item, focusedWindow) {
-                if (focusedWindow) {
-                    if (focusedWindow.id === 1) {
-                        // BrowserWindow.getAllWindows().forEach(function (win) {
-                        //     win.loadFile(path.join('views', 'animes', 'agregar.html'));
-                        // })
-                        const win = BrowserWindow.getFocusedWindow();
-                        win.loadFile(path.join('views', 'animes', 'agregar.html'));
-                    }
-                }
-            }
-        },
-        {
-            type: 'separator'
-        },
-        {
-            label: 'Historial',
-            accelerator: 'CmdOrCtrl+h',
-            click: function (item, focusedWindow) {
-                if (focusedWindow) {
-                    if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(function (win) {
-                            argsHistory = { pag: 1 };
-                            win.loadFile(path.join('views', 'animes', 'historial.html'));
-                        })
-                    }
-                }
-            }
-        },
-        {
-            type: 'separator'
-        },
-        {
-            label: 'Capítulos vistos',
-            accelerator: 'CmdOrCtrl+g',
-            click: function (item, focusedWindow) {
-                if (focusedWindow) {
-                    if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(function (win) {
-                            win.loadFile(path.join('views', 'animes', 'viendo.html'));
-                        })
-                    }
-                }
-            }
-        },
-        {
-            label: 'Capítulos restantes',
-            accelerator: 'CmdOrCtrl+j',
-            click: function (item, focusedWindow) {
-                if (focusedWindow) {
-                    if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(function (win) {
-                            win.loadFile(path.join('views', 'animes', 'capitulos_restantes.html'));
-                        })
-                    }
-                }
-            }
-        },
-        {
-            label: 'Páginas',
-            accelerator: 'CmdOrCtrl+p',
-            click: function (item, focusedWindow) {
-                if (focusedWindow) {
-                    if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(function (win) {
-                            win.loadFile(path.join('views', 'animes', 'paginas.html'));
-                        })
-                    }
-                }
-            }
-        }
         ]
     },
     {
@@ -321,8 +321,8 @@ const createWindow = () => {
         }
     });
     window.setTitle('Autoreas');
-    window.loadFile('public/index.html');
-    // window.loadFile(path.join('views', 'animes', 'ver.html'));
+    // window.loadFile('public/index.html');
+    window.loadFile(path.join('views', 'animes', 'ver.html'));
 
     // Loading menu from menu template
     const menu = Menu.buildFromTemplate(template);
