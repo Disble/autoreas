@@ -1,105 +1,98 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Autoreas
 
+## Descripción y contexto
 ---
 
-# svelte app
+> **Nota:** Este es un fork del proyecto [automatizar-tareas](https://github.com/Disble/automatizar-tareas) con la intencón de extender el mismo con funcionalidades de [Svelte](https://svelte.dev) y librerias actualizadas.
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+Esta aplicación tiene como principio la sencillez y accesibilidad de uso, ayudando al usuario con un sistema de control rápido y seguro, o como el lema que precede a esta aplicación dice.
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+> Apoyando la vagancia desde tiempos inmemoriales.
+
+Enfocada principalmente como un Sistema de Control de Capítulos (o SCC siglas que acabo de inventar) de animes vistos. Teniendo un ciclo completo (agregar, ver, editar, borrar) en su presente versión.
+
+Como parte del programa, diseñado al comienzo del desarrollo se presentarán las siguientes funciones. De las cuales actualmente ya se tienen cumplidas las siguientes funciones (sujetos a posibles cambios).
+
+### **Lista de Animes (enlazado a carpetas y web)**
+- **Animes**
+ - [x] Agregar
+ - [x] Editar
+ - [x] Ver
+ - [x] Borrar (no permanente)
+ - [x] Cambiar estado (finalizado, viendo, no me gusto, en pausa)
+- **Estadísticas**
+ - [x] Historial de Animes vistos (todos)
+    - Datos por anime
+    - Borrar (permanente)
+    - Restaurar (regresa a la lista de Ver Animes)
+    - Repetir
+    - Buscador
+    - Filtros para el buscador e historial
+ - [x] Gráfica de capítulos vistos de todos los animes (viendo)
+ - [x] Gráfica de las páginas de los animes (viendo)
+ - [x] Gráfica de los capítulos restantes de los animes (viendo y con capítulos restantes asignado)
+
+### **Lista de Pendientes (solo como lista)**
+ - [x] Agregar
+ - [x] Editar
+ - [x] Ver
+ - [x] Borrar
+ - [x] Crear Anime a partir de Pendiente (fork)
+
+### **Preferencias**
+ - [x] Opciones
+    - Días (cambiar de nombre)
+    - Gestor de descargas (acceso directo)
+    - Respaldos (importar y exportar)
+    - Modo temporada
+    - Modo oscuro
+
+### Características escondidas por Función
+- **Lista de Animes**
+ - [x] Si se guarda como página la URL de la misma, se activa un link de redirección externo.
+ - [x] No se necesita poner tildes, ni mayúsculas a los días de la semana.
+ - [x] Cuando se finaliza un anime pero no se elimina, aparece un contador en el menú de días de Ver Animes.
+ - [x] Cuando se posa el puntero encima de los capítulos vistos, muestra los capítulos restantes.
+ - [x] Si se hace clic derecho en los botones `Cap -` y `Cap +` solo resta o aumenta 0.5 al número de capítulos respectivamente.
+ - [x] Si esta configurado el Gestor de descargas aparecerá un icono a la derecha del título. 
+ - [x] Clic derecho en el ícono de carpeta o link copiara la dirección al portapapeles.
+
+## Guía de usuario
+---
+Explica los pasos básicos sobre cómo usar la herramienta digital. Es una buena sección para mostrar capturas de pantalla o gifs que ayuden a entender la herramienta digital.
+
+## Guía de instalación
+---
+Primero, se necesita tener instalado [nodejs](https://nodejs.org/en/download/) y [git](https://git-scm.com/downloads) para utilizar esta aplicación (al menos en versiones pre-release), recomiendo instalarlos desde su página oficial pero también hay otras páginas que dan mayores facilidades dependiendo del sistema operativo, la instalación es relativamente sencilla.
+
+Una vez instalados, abrir la terminal, ir al lugar donde planea guardar la aplicación y ejecutar los siguientes comandos.
 
 ```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
+git clone https://github.com/Disble/autoreas.git
+cd autoreas
 npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
 npm run dev
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+## Autor/es
+---
+Proyecto creado por @Disble
 
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+## Información adicional
+---
+Es fácil recordar una vez a la semana “Cierto hoy tengo que ver el nuevo capítulo de [agregue nombre de su anime favorito aquí]”, pero la situación cambia cuando se ven muchos animes por semana (yo he llegado a los 16 por semana), muchas veces, por día y a eso hay que sumarle que no siempre salen todos los animes en su página de descargas favorita y uno tiene que buscar en varias páginas para encontrar el capítulo deseado.
 
-## Building and running in production mode
+Es por esto y que me gusta apoyar a la vagancia (es el lema del proyecto) que he decidido hacer una aplicación que ayude a administrar todas estas variantes o como me gusta llamarlo Sistema de Control de Capítulos (o SCC) para enfocarse en lo que verdaderamente importa.
 
-To create an optimised version of the app:
+Ver anime.
 
-```bash
-npm run build
-```
+## Versiones
+---
+Las versiones de esta aplicación fueron creadas basándose en [Versionado Semántico](http://semver.org/).
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+**Next Update: Tooltip Update**
 
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+## Licencia
+---
+Este proyecto está bajo la licencia [MIT](./LICENSE) que esta adjuntado en el mismo.
