@@ -9,7 +9,8 @@ const { autoUpdater } = require('electron-updater');
 let template = [
     {
         label: 'Animes',
-        submenu: [{
+        submenu: [
+            {
             label: 'Ver',
             accelerator: 'CmdOrCtrl+1',
             click: function (item, focusedWindow) {
@@ -23,6 +24,19 @@ let template = [
             }
         },
         {
+                label: 'Ver 2',
+                accelerator: 'CmdOrCtrl+2',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join(__dirname, 'public', 'index.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
             label: 'Editar',
             accelerator: 'CmdOrCtrl+3',
             click: function (item, focusedWindow) {
@@ -41,9 +55,11 @@ let template = [
             click: function (item, focusedWindow) {
                 if (focusedWindow) {
                     if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(function (win) {
-                            win.loadFile(path.join('views', 'animes', 'agregar.html'));
-                        })
+                        // BrowserWindow.getAllWindows().forEach(function (win) {
+                        //     win.loadFile(path.join('views', 'animes', 'agregar.html'));
+                        // })
+                        const win = BrowserWindow.getFocusedWindow();
+                        win.loadFile(path.join('views', 'animes', 'agregar.html'));
                     }
                 }
             }
