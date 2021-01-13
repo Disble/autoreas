@@ -36,6 +36,7 @@
     "rollup-plugin-scss": "^2.6.1",
     "sirv-cli": "^1.0.0",
     "sortablejs": "^1.13.0",
+    "svelte-spa-router": "^3.1.0",
     "sweetalert": "^2.1.2"
   },
   "build": {

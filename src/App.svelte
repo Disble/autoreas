@@ -1,20 +1,21 @@
-<script>
-  import { MaterialApp } from 'svelte-materialify';
-	import { mdiCheck } from '@mdi/js';
-	import Sidebar from './components/sidebar/sidebarComponent.svelte';
-	import Alert from 'svelte-materialify/src/components/Alert';
-	import Icon from 'svelte-materialify/src/components/Icon';
-	let theme = 'light';
-</script>
+<h1>svelte-spa-router sample</h1>
+<h2>Basic routing</h2>
 
-<MaterialApp theme="{theme}">
-	<Sidebar  />
-	<Alert class="yellow-text text-darken-4" text>
-		<div slot="icon">
-			<Icon path={mdiCheck} />
-		</div>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, aperiam ad iure
-		harum iste ea numquam quo accusamus blanditiis in.
-	</Alert>
-	<h1>Hola</h1>
-</MaterialApp>
+<!-- Navigation links -->
+<ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/hello/svelte">Say hi!</a></li>
+    <li><a href="#/wild/card">Wildcard route</a></li>
+    <li><a href="#/does/not/exist">Not found</a></li>
+</ul>
+
+<!-- Show the router -->
+<Router {routes} />
+
+<script>
+// Import the router component
+// Normally, this would be: `import Router from 'svelte-spa-router'`
+import Router from 'svelte-spa-router'
+// Import the list of routes
+import routes from './routes'
+</script>
