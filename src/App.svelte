@@ -33,7 +33,7 @@
   }, 5000)
 </script>
 
-<div
+<!-- <div
   class="d-inline-block"
   on:mouseenter={mouseenter}
   on:mouseleave={mouseleave}
@@ -69,7 +69,7 @@
       </ListItem>
     </List>
   </NavigationDrawer>
-</div>
+</div> -->
 
 <h1>svelte-spa-router sample</h1>
 <h2>Basic routing</h2>
@@ -82,8 +82,6 @@
   <li><a href="#/does/not/exist">Not found</a></li>
   <li><a href="#/side" id="sidebar" >sidebarComponent</a></li>
 </ul>
-
-<Button on:click={handleRoute}>Nueva ruta</Button>
 
 <!-- Show the router -->
 <Router {routes} />
