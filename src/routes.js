@@ -3,6 +3,7 @@ import Home from './routes/Home.svelte'
 import Name from './routes/Name.svelte'
 import Wild from './routes/Wild.svelte'
 import NotFound from './routes/NotFound.svelte'
+import sidebarComponent from './components/sidebar/sidebarComponent.svelte';
 
 // Export the route definition object
 export default {
@@ -16,6 +17,7 @@ export default {
   // Included twice to match both `/wild` (and nothing after) and `/wild/*` (with anything after)
   '/wild': Wild,
   '/wild/*': Wild,
+  '/side': sidebarComponent,
 
   // Catch-all, must be last
   '*': NotFound,
