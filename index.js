@@ -8,6 +8,111 @@ const { autoUpdater } = require('electron-updater');
 
 let template = [
     {
+        label: 'The Will of the',
+        submenu: [
+            {
+                label: 'Ver',
+                accelerator: 'CmdOrCtrl+1',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.webContents.send('router', '/wild');
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                label: 'Editar',
+                accelerator: 'CmdOrCtrl+3',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'editar.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                label: 'Agregar',
+                accelerator: 'CmdOrCtrl+4',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            // BrowserWindow.getAllWindows().forEach(function (win) {
+                            //     win.loadFile(path.join('views', 'animes', 'agregar.html'));
+                            // })
+                            const win = BrowserWindow.getFocusedWindow();
+                            win.loadFile(path.join('views', 'animes', 'agregar.html'));
+                        }
+                    }
+                }
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Historial',
+                accelerator: 'CmdOrCtrl+h',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                argsHistory = { pag: 1 };
+                                win.loadFile(path.join('views', 'animes', 'historial.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Capítulos vistos',
+                accelerator: 'CmdOrCtrl+g',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'viendo.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                label: 'Capítulos restantes',
+                accelerator: 'CmdOrCtrl+j',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'capitulos_restantes.html'));
+                            })
+                        }
+                    }
+                }
+            },
+            {
+                label: 'Páginas',
+                accelerator: 'CmdOrCtrl+p',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.loadFile(path.join('views', 'animes', 'paginas.html'));
+                            })
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    {
         label: 'Steins Gate',
         accelerator: 'CmdOrCtrl+S',
         click: function (item, focusedWindow) {
@@ -15,6 +120,9 @@ let template = [
                 if (focusedWindow.id === 1) {
                     BrowserWindow.getAllWindows().forEach(function (win) {
                         win.loadFile(path.join(__dirname, 'public', 'index.html'));
+                        win.webContents.on('did-finish-load', () => {
+                            win.webContents.send('ping', 'whoooooooh!');
+                        });
                     })
                 }
             }
@@ -207,7 +315,9 @@ let template = [
     },
     {
         label: 'Preferencias',
-        submenu: [{
+        submenu: [
+
+            {
             label: 'Opciones',
             accelerator: 'CmdOrCtrl+O',
             click: function (item, focusedWindow) {
@@ -218,8 +328,22 @@ let template = [
                         })
                     }
                 }
+                }
+            },
+            {
+                label: 'Toggle Theme',
+                accelerator: 'CmdOrCtrl+O',
+                click: function (item, focusedWindow) {
+                    if (focusedWindow) {
+                        if (focusedWindow.id === 1) {
+                            BrowserWindow.getAllWindows().forEach(function (win) {
+                                win.webContents.send('dark-mode', 'dark');
+                            })
+                        }
+                    }
+                }
             }
-        }]
+        ]
     },
     {
         label: 'Ventana',
