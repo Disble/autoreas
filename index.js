@@ -30,7 +30,7 @@ let template = [
                     if (focusedWindow) {
                         if (focusedWindow.id === 1) {
                             BrowserWindow.getAllWindows().forEach(function (win) {
-                                win.loadFile(path.join('views', 'animes', 'editar.html'));
+                                win.webContents.send('router', '/hello/svelte');
                             })
                         }
                     }

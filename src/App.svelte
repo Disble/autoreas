@@ -22,6 +22,12 @@
   });
 </script>
 
-<MaterialApp {theme}>
+<MaterialApp class="MaterialApp" {theme}>
   <Router {routes} />
 </MaterialApp>
+
+<style type="scss" global>
+  body {
+    padding: 0;
+  }
+</style>
